@@ -1,0 +1,27 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v1"
+    },
+    "exported_at": "2021-01-08T20:03:32+03:00",
+    "name": "Shoutcast",
+    "author": "firecode@yahoo.com",
+    "description": "Shoutcast server egg for pterodactyl panel",
+    "features": null,
+    "image": "quay.io\/parkervcp\/pterodactyl-images:base_debian",
+    "startup": ".\/sc_serv sc_serv_simple.conf",
+    "config": {
+        "files": "{\r\n    \"sc_serv_simple.conf\": {\r\n        \"parser\": \"conf\",\r\n        \"find\": {\r\n            \"portbase\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
+        "startup": "{\r\n    \"done\": \")! [MICROSERVER] Flash policy file server not enabled \",\r\n    \"userInteraction\": []\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n# You can change download server, if want install legacy server (Change wget link, to your DL cloud)\r\n\r\napt update\r\napt install -y zip unzip wget curl\r\n\r\ncd \/mnt\/server\r\nmkdir sc # This folder using for custom shoutcast files\r\n\r\necho -e \"Shoutcast egg - Downloading shoutcast server, linux\"\r\nwget \"http:\/\/download.nullsoft.com\/shoutcast\/tools\/sc_serv2_linux_x64-latest.tar.gz\"\r\necho -e \"Shoutcast egg - Acrhive shoutcast server, decompressing\"\r\n# echo -e \"Shoutcast egg print - Creating temp file\"\r\ntar -xzf sc_serv2_linux_x64-latest.tar.gz\r\n# echo -e \"Shoutcast egg print - Configuration of shoutcast downloading\"\r\nwget \"https:\/\/raw.githubusercontent.com\/Rezanans-wow\/Shoutcast-server-egg\/main\/shoutcast_files\/sc_serv_simple.conf\"\r\n# echo -e \"Shoutcast egg print - Temp files removed\"\r\nrm sc_serv2_linux_x64-latest.tar.gz\r\n\r\necho -e \"Done\"",
+            "container": "debian:buster-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": []
+}
