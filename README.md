@@ -1,7 +1,7 @@
 # Shoutcast-server-egg
 Egg for pterodactyl
 Name of egg: Shoutcast server
-OS: Linux
+<p>OS: Linux</p>
 
 How to import egg?
 https://github.com/parkervcp/eggs#how-to-import-an-egg
