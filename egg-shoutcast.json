@@ -12,7 +12,7 @@
     "startup": ".\/sc_serv sc_serv_simple.conf",
     "config": {
         "files": "{\r\n    \"sc_serv_simple.conf\": {\r\n        \"parser\": \"conf\",\r\n        \"find\": {\r\n            \"portbase\": \"{{server.build.default.port}}\"\r\n        }\r\n    }\r\n}",
-        "startup": "{\r\n    \"done\": \")! [MICROSERVER] Flash policy file server not enabled \",\r\n    \"userInteraction\": []\r\n}",
+        "startup": "{\r\n    \"done\": \"*********************************************************************\"\r\n}",
         "logs": "{}",
         "stop": "^C"
     },
