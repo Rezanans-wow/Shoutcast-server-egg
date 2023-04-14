@@ -5,7 +5,7 @@
     },
     "exported_at": "2021-01-08T20:03:32+03:00",
     "name": "Shoutcast",
-    "author": "firecode@yahoo.com",
+    "author": "shoutcast@pterohost.com",
     "description": "Shoutcast server egg for pterodactyl panel",
     "features": null,
     "image": "quay.io\/parkervcp\/pterodactyl-images:base_debian",
